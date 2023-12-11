@@ -6,7 +6,7 @@ from discord import app_commands
 from discord.ext import commands
 
 
-import TOKEN
+import SECRETS
 
 
 class Owners(commands.Cog, name="관리자 전용"):
@@ -15,7 +15,7 @@ class Owners(commands.Cog, name="관리자 전용"):
         super().__init__()
 
     async def cog_check(self, ctx):
-        if ctx.author.id in TOKEN.owners:
+        if ctx.author.id in SECRETS.owners:
             return True
         else:
             await ctx.send('⚠️ 이 명령어는 __**소유자 전용**__ 입니다.')

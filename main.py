@@ -8,7 +8,7 @@ from discord import app_commands
 from discord.ext import commands
 from discord.ext.commands import CommandNotFound
 
-import TOKEN
+import SECRETS
 
 
 class RolelerSkate(commands.AutoShardedBot):
@@ -55,7 +55,7 @@ class RolelerSkate(commands.AutoShardedBot):
 
 async def run():
     logging.basicConfig(level=logging.INFO)
-    rolelerskate = RolelerSkate(config=TOKEN)
-    await rolelerskate.start(TOKEN.bot_token)
+    rolelerskate = RolelerSkate(config=SECRETS)
+    await rolelerskate.start(SECRETS.bot_token)
 
 asyncio.run(run())
