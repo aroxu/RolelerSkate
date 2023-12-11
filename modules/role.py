@@ -30,7 +30,7 @@ class Role(commands.Cog):
                 await interaction.user.remove_roles(user_role)
 
         for role in interaction.guild.roles:
-            if role.name == f"RSColor_#{color}":
+            if role.name == f"RSColor_{color}":
                 await interaction.user.add_roles(role)
                 await interaction.response.send_message(f"역할 {role.mention}을(를) 성공적으로 부여하였습니다.", ephemeral=True)
                 return
